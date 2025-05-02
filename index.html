@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkLite - URL Shortener</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top glass-nav" aria-label="Main navigation">
+            <div class="container">
+                <a class="navbar-brand" href="#">LinkLite</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-3 animate__animated animate__fadeIn">Simplify Your Links with LinkLite</h1>
+            <p class="lead animate__animated animate__fadeIn animate__delay-1s">Create short, secure, and shareable URLs in seconds.</p>
+            <div class="input-group mb-3 mt-4 w-75 mx-auto animate__animated animate__fadeIn animate__delay-2s">
+                <input type="url" id="urlInput" class="form-control" placeholder="Enter your URL here" aria-label="URL">
+                <button class="btn btn-primary" type="button" id="shortenBtn">Shorten</button>
+            </div>
+            <div id="shortenedUrl" class="mt-3"></div>
+            <div class="action-buttons mt-3">
+                <button class="btn btn-outline-light me-2" id="copyBtn" style="display: none;">Copy Link</button>
+                <button class="btn btn-outline-light me-2" id="refreshBtn" style="display: none;">Refresh Link</button>
+                <button class="btn btn-outline-light" id="resetBtn">Reset</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 animate__animated animate__fadeInUp">About LinkLite</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1624555130581-1d9cca783bc0" class="img-fluid lazy-load rounded-3" alt="Team working" loading="lazy">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">LinkLite is your go-to solution for creating short, secure, and trackable URLs. We empower businesses and individuals to share links effortlessly.</p>
+                    <p>Our cutting-edge technology ensures reliability, speed, and user satisfaction, making link management a breeze.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use Section -->
+    <section id="how-to-use" class="how-to-use-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 animate__animated animate__fadeInUp">How to Use LinkLite</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm animate__animated animate__fadeInUp animate__delay-1s">
+                        <div class="card-body">
+                            <h5 class="card-title">Step 1: Paste Your URL</h5>
+                            <p class="card-text">Enter your long URL in the input field provided.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm animate__animated animate__fadeInUp animate__delay-2s">
+                        <div class="card-body">
+                            <h5 class="card-title">Step 2: Shorten It</h5>
+                            <p class="card-text">Click the "Shorten" button to generate a compact link.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm animate__animated animate__fadeInUp animate__delay-3s">
+                        <div class="card-body">
+                            <h5 class="card-title">Step 3: Share</h5>
+                            <p class="card-text">Copy and share your shortened URL anywhere!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 animate__animated animate__fadeInUp">Our Services</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <i class="bi bi-link-45deg display-4 text-primary mb-3"></i>
+                    <h4>URL Shortening</h4>
+                    <p>Convert lengthy URLs into short, manageable links.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="bi bi-shield-lock display-4 text-primary mb-3"></i>
+                    <h4>Secure Links</h4>
+                    <p>Protect your links with advanced security protocols.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="bi bi-graph-up display-4 text-primary mb-3"></i>
+                    <h4>Analytics</h4>
+                    <p>Monitor link performance with detailed analytics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 animate__animated animate__fadeInUp">Why Choose LinkLite?</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="feature-box p-4 shadow-sm animate__animated animate__fadeInUp">
+                        <h5>Lightning Fast</h5>
+                        <p>Experience unparalleled speed in link creation and redirection.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="feature-box p-4 shadow-sm animate__animated animate__fadeInUp animate__delay-1s">
+                        <h5>Custom Links</h5>
+                        <p>Personalize your URLs to align with your brand.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="feature-box p-4 shadow-sm animate__animated animate__fadeInUp animate__delay-2s">
+                        <h5>Cross-Platform</h5>
+                        <p>Access LinkLite seamlessly on any device.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="feature-box p-4 shadow-sm animate__animated animate__fadeInUp animate__delay-3s">
+                        <h5>Free Plan</h5>
+                        <p>Enjoy core features at no cost with our free plan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 animate__animated animate__fadeInUp">Pricing Plans</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm animate__animated animate__fadeInUp">
+                        <div class="card-body">
+                            <h5 class="card-title">Free</h5>
+                            <p class="card-text display-6">$0<span class="fs-6">/mo</span></p>
+                            <ul class="list-unstyled">
+                                <li>Unlimited URL Shortening</li>
+                                <li>Basic Analytics</li>
+                                <li>Standard Support</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary mt-3">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm animate__animated animate__fadeInUp animate__delay-1s">
+                        <div class="card-body">
+                            <h5 class="card-title">Pro</h5>
+                            <p class="card-text display-6">$9.99<span class="fs-6">/mo</span></p>
+                            <ul class="list-unstyled">
+                                <li>Custom URLs</li>
+                                <li>Advanced Analytics</li>
+                                <li>Priority Support</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary mt-3">Choose Pro</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm animate__animated animate__fadeInUp animate__delay-2s">
+                        <div class="card-body">
+                            <h5 class="card-title">Enterprise</h5>
+                            <p class="card-text display-6">Custom</p>
+                            <ul class="list-unstyled">
+                                <li>Branded Domains</li>
+                                <li>Team Accounts</li>
+                                <li>Dedicated Support</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary mt-3">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 animate__animated animate__fadeInUp">Our Team</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm animate__animated animate__fadeInUp">
+                        <img src="https://randomuser.me/api/portraits/men/1.jpg" class="card-img-top rounded-circle mx-auto mt-3 lazy-load" alt="Team member" loading="lazy" width="120">
+                        <div class="card-body">
+                            <h5 class="card-title">Alex Carter</h5>
+                            <p class="card-text">Founder & CEO</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm animate__animated animate__fadeInUp animate__delay-1s">
+                        <img src="https://randomuser.me/api/portraits/women/2.jpg" class="card-img-top rounded-circle mx-auto mt-3 lazy-load" alt="Team member" loading="lazy" width="120">
+                        <div class="card-body">
+                            <h5 class="card-title">Sophie Lee</h5>
+                            <p class="card-text">Lead Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm animate__animated animate__fadeInUp animate__delay-2s">
+                        <img src="https://randomuser.me/api/portraits/men/3.jpg" class="card-img-top rounded-circle mx-auto mt-3 lazy-load" alt="Team member" loading="lazy" width="120">
+                        <div class="card-body">
+                            <h5 class="card-title">Michael Brown</h5>
+                            <p class="card-text">Marketing Head</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 animate__animated animate__fadeInUp">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                            Is LinkLite free to use?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, LinkLite offers a free plan with unlimited URL shortening and basic analytics.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                            Can I customize my short URLs?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, our Pro and Enterprise plans allow you to create custom and branded URLs.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                            How secure are the shortened links?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We use advanced encryption and security protocols to ensure your links are safe.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Reviews Section -->
+    <section id="reviews" class="reviews-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 animate__animated animate__fadeInUp">Client Testimonials</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="review-card p-4 shadow-sm text-center animate__animated animate__fadeInUp">
+                        <img src="https://randomuser.me/api/portraits/women/1.jpg" class="rounded-circle mb-3 lazy-load" alt="Client" loading="lazy" width="80">
+                        <p>"LinkLite transformed how I share content online. It's fast and intuitive!"</p>
+                        <h6>Sarah K.</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="review-card p-4 shadow-sm text-center animate__animated animate__fadeInUp animate__delay-1s">
+                        <img src="https://randomuser.me/api/portraits/women/3.jpg" class="rounded-circle mb-3 lazy-load" alt="Client" loading="lazy" width="80">
+                        <p>"The custom URL feature is a game-changer for my brand."</p>
+                        <h6>Emma L.</h6>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="review-card p-4 shadow-sm text-center animate__animated animate__fadeInUp animate__delay-2s">
+                        <img src="https://randomuser.me/api/portraits/men/2.jpg" class="rounded-circle mb-3 lazy-load" alt="Client" loading="lazy" width="80">
+                        <p>"Analytics helped me optimize my campaigns effectively."</p>
+                        <h6>John M.</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="contact-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 animate__animated animate__fadeInUp">Get in Touch</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="contactForm" aria-label="Contact form">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f" class="img-fluid lazy-load rounded-3" alt="Contact us" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>LinkLite</h5>
+                    <p>Simplifying the way you share links with fast, secure, and trackable URLs.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white">Home</a></li>
+                        <li><a href="#about" class="text-white">About</a></li>
+                        <li><a href="#pricing" class="text-white">Pricing</a></li>
+                        <li><a href="#contact" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-white">
+            <p class="text-center">© 2025 LinkLite. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="scripts.js"></script>
+</body>
+</html>
