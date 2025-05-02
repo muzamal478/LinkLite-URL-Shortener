@@ -36,7 +36,7 @@ LinkLite is a modern, responsive URL shortening website designed to simplify lin
   - Bootstrap Icons 1.11.3 (Icons)
 
 ## Live Demo
-Visit the live website at: [https://your-username.github.io/LinkLite-URL-Shortener/](https://muzamal478.github.io/LinkLite-URL-Shortener/)
+Visit the live website at: [https://muzamal478.github.io/LinkLite-URL-Shortener/](https://muzamal478.github.io/LinkLite-URL-Shortener/)
 
 ## Setup Instructions
 To run this project locally or deploy it on your own GitHub Pages:
@@ -84,4 +84,4 @@ Please ensure your code follows the project’s coding standards and includes ap
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
-*Built with ❤️ by [Muzamal Asghar](Muzamal Asghar)*
+*Built with ❤️ by Muzamal Asghar*
